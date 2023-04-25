@@ -1,13 +1,7 @@
-import multiprocessing
-
-from DAH Assignment.DAH import mapreduce
-
-
 if __name__ == '__main__':
-    with open('C:/Users/ATUL/OneDrive/Desktop/My  Projects/DAH Assignment/input file.txt', 'r') as f:
+    with open('DAH Assignment/input.txt', 'r') as f:
         data = f.read()
-    
-    num_workers = multiprocessing.cpu_count()
+    num_workers = 4
     word_count_totals = mapreduce(data, num_workers)
-    
-    print(word_count_totals)
+    for word, count in word_count_totals.items():
+        print(word, count)
